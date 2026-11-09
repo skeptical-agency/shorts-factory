@@ -1,0 +1,28 @@
+name: shorts-factory
+version: 0.1.0
+description: "Shorts Factory: the 9:16 short-video pipeline as executable tools — burned word-timed captions, streaming loudness, trap-safe concat, footage QA, thumbnail safezone and motion linting. All local ffmpeg, zero credentials."
+author: Skeptical Agency
+homepage: https://github.com/skeptical-agency/shorts-factory
+license: MIT
+tags: [video, ffmpeg, shorts, captions, loudness, qa, creator]
+provides_tools:
+  - sf_status
+  - sf_loudness
+  - sf_concat
+  - sf_captions
+  - sf_footage_audit
+  - sf_safezone
+  - sf_motion_lint
+pip_dependencies:
+  - pillow
+config_schema:
+  caption_font:
+    type: str
+    default: ""
+    label: "Caption font path"
+    description: "Path to a .ttf for burned captions (Bebas Neue recommended). Empty = auto-discover, then auto-download Bebas Neue from google/fonts on first use."
+  accent_color:
+    type: str
+    default: "#FFD400"
+    label: "Caption accent color"
+    description: "Hex color for emphasized words (products, prices, specs) in burned captions."
